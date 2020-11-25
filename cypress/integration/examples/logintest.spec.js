@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import {login} from '../dbanklogin.js'
+import {login} from '../../pageObjects/dbanklogin.js'
 
 beforeEach(()=>{
     cy.visit("http://dbankdemo.com/login")
