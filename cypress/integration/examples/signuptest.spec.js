@@ -7,8 +7,8 @@ beforeEach(()=>{
     
     
 })
-const name = "Ramon";
-const lastname = "Pedroza";
+const name = "Cynthia";
+const lastname = "Zoe";
 const address = "123 Digital Lane";
 const locality = "internet City";
 const region = "CA";
