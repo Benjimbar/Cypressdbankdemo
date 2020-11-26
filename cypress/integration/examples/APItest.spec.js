@@ -28,11 +28,19 @@ context("Test pokemon API", () => {
     it("Test API body has a property", ()=>{
         cy.request("https://pokeapi.co/api/v2/berry-flavor/1").its('body').should('have.property','berries');
     }) 
-    it("Test Pokemon API has a nested property", ()=>{
+    it("Test Pokemon API has a Array of lenght 29", ()=>{
         cy.request('GET',"https://pokeapi.co/api/v2/berry-flavor/1").then((response) => {
             expect(response.body).not.to.be.null
             expect(response.body.berries).to.have.length(29)
         })
+    })
+    it("Test Pokemon API has a nested value", ()=>{
+        cy.request('GET',"https://pokeapi.co/api/v2/berry-flavor/1")
+        .its('body')
+        .its('berries')
+        .its('0')
+        .its("berry")
+        .should('include', {name: "rowap", url: "https://pokeapi.co/api/v2/berry/64/"}) 
     })
     
    
